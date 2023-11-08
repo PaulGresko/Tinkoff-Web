@@ -59,15 +59,13 @@ class Queue {
         this.items = [];
     }
     peek() {
-        // Возвращает элемент из начала очереди без удаления его
         if (this.items.length === 0) {
-            return undefined; // Очередь пуста
+            return undefined; 
         }
         return this.items[0];
     }
 
     isEmpty() {
-        // Проверяет, пуста ли очередь
         return this.items.length === 0;
     }
 }
