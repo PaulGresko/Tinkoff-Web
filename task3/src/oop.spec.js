@@ -1,6 +1,6 @@
 const assert = require('assert');
 const core = require('./oop');
-const {Point3D} = require("./oop");
+const { Point3D } = require("./oop");
 
 describe('ООП', () => {
     describe('#Point', () => {
@@ -58,7 +58,7 @@ describe('ООП', () => {
     describe('#Queue', () => {
         it('проверка массивом', () => {
             const queue = new core.Queue();
-            queue.push(...[1,2,3,4]);
+            queue.push(...[1, 2, 3, 4]);
             assert.strictEqual(queue.pop(), 1);
             assert.strictEqual(queue.pop(), 2);
             assert.strictEqual(queue.size, 2);
@@ -78,16 +78,30 @@ describe('ООП', () => {
         });
 
         it('может создаться из массива', () => {
-            const queue = new core.Queue([1,-2,3,5]);
+            const queue = new core.Queue([1, -2, 3, 5]);
             assert.strictEqual(queue.pop(), 1);
             assert.strictEqual(queue.pop(), -2);
             assert.strictEqual(queue.size, 2);
         });
 
         it('методы работают корректно ', () => {
-            const queue = new core.Queue([1,-2,3,5]);
-           // TODO: ваши тесты
-            assert.strictEqual(true, true);
+            const queue = new core.Queue([1, -2, 3, 5]);
+            
+            queue.push(5, 7, 8, 9);
+            assert.strictEqual(queue.size, 8);
         });
+        it('метод peek()', () => {
+            const queue = new core.Queue([1, -2, 3, 5]);
+            assert.strictEqual(queue.size, 4);
+            assert.strictEqual(queue.peek(), 1);
+            assert.strictEqual(queue.size, 4);
+        });
+
+        it('метод isEmpty()', () => {
+            const queue = new core.Queue();
+            assert.strictEqual(queue.size, 0);
+            assert.strictEqual(queue.isEmpty(), true);
+        });
+
     });
 });

@@ -40,7 +40,7 @@ class Point3D extends Point {
  */
 class Queue {
     constructor(items = []) {
-        this.items = items.slice(); // Копируем массив, чтобы избежать изменения исходного массива.
+        this.items = items.slice();
     }
 
     push(...items) {
@@ -57,6 +57,18 @@ class Queue {
 
     clear() {
         this.items = [];
+    }
+    peek() {
+        // Возвращает элемент из начала очереди без удаления его
+        if (this.items.length === 0) {
+            return undefined; // Очередь пуста
+        }
+        return this.items[0];
+    }
+
+    isEmpty() {
+        // Проверяет, пуста ли очередь
+        return this.items.length === 0;
     }
 }
 
