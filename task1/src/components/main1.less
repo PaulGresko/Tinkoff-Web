@@ -1,0 +1,23 @@
+.main1 {
+    &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        &__text-block {
+
+            p {
+                .text-style(400, 15px, 24px, var(--text-color-1));
+                text-align: center;
+            }
+            
+        }
+
+        &__button {
+            .button(175px, 56px);
+            
+            margin-top: 40px;
+            margin-bottom: 64px;
+        }
+    }
+}

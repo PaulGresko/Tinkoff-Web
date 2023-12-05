@@ -1,0 +1,72 @@
+:root{
+    --background: #F6F7F8;
+    --background-secondary: #FFFFFF;
+    --backgorung-additional: #333333;
+
+    --text-color-1: rgba(0, 0, 0, 0.8);
+    --text-color-2: rgba(0, 0, 0, 0.54);
+    --text-color-3: #336FEE;
+    --text-color-4: rgba(51, 111, 238, 0.8);
+
+    --background-button-1: #FFDD2D;
+    --background-button-2: #FCC521;
+    --background-button-3: #FAB619;
+}
+
+.text-style(@weight, @size, @height, @color) {
+    font-weight: @weight;
+    font-size: @size;
+    line-height: @height;
+    color: @color;
+}
+
+.element-background-style (@width, @height) {
+    width: @width;
+    height: @height;
+    background: var(--background-secondary);
+    border-radius: 24px;
+}
+
+.button (@width, @height) {
+    .text-style(400, 15px, 24px, var(--text-color-1));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    cursor: pointer;
+    //outline: inherit;
+
+    width: @width;
+    height: @height;
+
+    background: var(--background-button-1);
+    border-radius: 8px;
+
+    &:hover {
+        background: var(--background-button-2);
+    }
+
+    &:active {
+        background: var(--background-button-3);
+    }
+
+    &:focus {
+        border: 2px solid rgba(51, 51, 51, 0.48);
+    }
+}
+
+.input-style(@width,@height,@pad-l,@pad-r) {
+    .text-style(400, 15px, 24px, var(--text-color-1));
+    padding-left: @pad-l;
+    padding-right: @pad-r;
+    width: @width;
+    height: @height;
+    background: #ECF1F7;
+    border-radius: 8px;
+    border: 0;
+    &:focus {
+        outline: none;
+    }
+}

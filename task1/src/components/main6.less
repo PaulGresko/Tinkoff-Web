@@ -1,0 +1,41 @@
+.main6 {
+    margin-bottom: 48px;
+    &__block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        //justify-content: space-between;
+        margin-top: -28px;
+
+        &__title {
+            width: 56px;
+            height: 56px;
+            background: var(--backgorung-additional);
+            border-radius: 16px;
+
+            position:relative;
+            top: 28px;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .text-style(800, 24px, 133%, var(--background-secondary));
+        }
+        &__text {
+            .element-background-style (240px, 160px);
+            .text-style(400, 15px, 160%, var(--text-color-1));
+            padding: 56px 32px 32px 32px;
+            text-align: center;
+        }
+    }
+}
+
+.test {
+    &1{
+        margin-right: 3px;
+    }
+
+    &2 {
+        margin-left: 3px;
+    }
+}

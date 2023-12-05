@@ -1,0 +1,25 @@
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top: 132px;
+    padding: 20px 0 24px 0;
+    border-top: 1px solid #e7e8ea;
+
+    &__copyright {
+        .text-style(400, 13px, 20px, var(--text-color-2));
+    }
+    &__contact {
+        .text-style(400, 13px, 20px, var(--text-color-2));
+
+        &__address {
+            font-style: normal;
+            & a {
+                color: var(--text-color-3);
+                text-decoration: none;
+            }
+
+        }
+    }
+}

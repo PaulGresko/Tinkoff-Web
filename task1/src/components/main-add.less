@@ -1,0 +1,66 @@
+.main-add {
+
+    &__block {
+        .element-background-style (1104px, auto);
+        padding:24px 96px;
+
+        & details:first-child > summary {
+            border-top: none;
+        }
+
+        & details {
+
+            & summary {
+                .text-style(700, 24px, 28px, --text-color-1);
+                padding: 28px 0 28px 0;
+                margin: 0;
+                border-top: 1px solid #e7e8ea;
+
+                list-style: none;
+                position: relative;
+
+                & svg {
+                    width: 24px;
+                    height: 24px;
+                }
+
+                &:before {
+                    position: absolute;
+                    content: '';
+                    font-weight: 900;
+                    transition: transform 0.2s;
+                    will-change: transform;
+                    left: 890px;
+                    width: 25px;
+                    height: 25px;
+                    background: transparent url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20focusable%3D%22false%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M7.707%2010.293a1%201%200%200%200-1.414%201.414l4.294%204.294c.781.781%202.043.783%202.826%200l4.294-4.294a1%201%200%200%200-1.414-1.414L12%2014.586l-4.293-4.293z%22%20fill%3D%22currentColor%22%20stroke%3D%22none%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E") 0 50% no-repeat;
+                }
+            }
+            &[open] > summary:before{
+                transform: rotate(180deg);
+            }
+
+            & ul {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                margin-bottom: 28px;
+    
+                & li {
+                    margin-left: 20px;
+                    position: relative;
+                    list-style: none;
+    
+                    &:before {
+                        position: absolute;
+                        content: '';
+                        left: -20px;
+                        width: 12px;
+                        height: 20px;
+                        background: transparent url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTIiIGhlaWdodD0iMiIgcng9IjEiIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iLjgiLz48L3N2Zz4=) 0 50% no-repeat;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+@import './src/helper';
+@import './src/logo.less';
+
+@import './src/utils/variables.less';
+@import './src/utils/media.less';
+@import './src/utils/flex-grid.less';
+
+@import './src/components/header.less';
+@import './src/components/main.less';
+@import './src/components/main1.less';
+@import './src/components/main2.less';
+@import './src/components/main3.less';
+@import './src/components/main4.less';
+@import './src/components/main5.less';
+@import './src/components/main6.less';
+@import './src/components/footer.less';
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 1104px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media @desktop-lg-min {
+    width: 1104px;
+  }
+}
+
+body {
+   font-family: 'Roboto', sans-serif;
+   background: var(--background);
+}
+
