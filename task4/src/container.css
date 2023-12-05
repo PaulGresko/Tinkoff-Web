@@ -159,9 +159,17 @@
   height: 40px; 
 }
 
-.add-button {
+.right-left-div {
+  display: flex;
+  flex-direction: column;
   position: fixed;
   bottom: 10px;
+  right: 10px;
+}
+.right-left-div button{
+  width: 62;
+  height: 57;
+  margin-bottom: 10px;
   padding: 10px 15px;
   font-size: 16px;
   color: white;
@@ -178,20 +186,12 @@
   border-radius: 5px;
   box-shadow: -11px 11px 1px rgba(0, 0, 0, 0.3);
   transition: transform 1s, background 1s;
-}
-
-
-.add-button {
-  right: 10px;
   order: 2;
   border-radius: 100px;
 }
 
-.add-button::before {
-  content: url('../recourses/plus30.png');
-  display: inline-block;
-}
-.add-button:hover {
+
+.right-left-div button:hover {
   background: linear-gradient(135deg, #fa782e 25%, #c82930 108%);
   transform: scale(1.15);
 } 
