@@ -1,0 +1,31 @@
+.main4 {
+    &__text-block {
+        .element-background-style(528px, 212px);
+        .text-style(400, 15px, 160%, var(--text-color-1));
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        & ul {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            & li {
+                margin-left: 20px;
+                position: relative;
+                list-style: none;
+
+                &:before {
+                    position: absolute;
+                    content: '';
+                    left: -20px;
+                    width: 12px;
+                    height: 20px;
+                    background: transparent url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTIiIGhlaWdodD0iMiIgcng9IjEiIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iLjgiLz48L3N2Zz4=) 0 50% no-repeat;
+                }
+            }
+        }
+    }
+}

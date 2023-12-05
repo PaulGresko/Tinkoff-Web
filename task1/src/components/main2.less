@@ -1,0 +1,38 @@
+.main2 {
+
+    &__image-block {
+        .element-background-style(720px, 360px);
+    }
+
+    &__list-block {
+        .text-style(400, 15px, 24px, var(--text-color-1));
+
+        margin-top: 48px;
+        max-width: 336px;
+
+        @media @desktop-lg-min {
+            margin-left: 46px;
+          }
+
+        & ul {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            & li {
+                position: relative;
+                list-style: none;
+                //list-style-type: none;
+
+                &:before {
+                    position: absolute;
+                    content: '';
+                    left: -20px;
+                    width: 12px;
+                    height: 20px;
+                    background: transparent url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTIiIGhlaWdodD0iMiIgcng9IjEiIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iLjgiLz48L3N2Zz4=) 0 50% no-repeat;
+                }
+            }
+        }
+    }
+}

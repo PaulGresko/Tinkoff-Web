@@ -1,0 +1,39 @@
+.content {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+
+.title-maincontent { //all h1
+    .text-style(900, 44px, 109%, var(--text-color-1));
+    text-align: center;
+    @media @desktop-lg-min {
+      margin-bottom: 24px;
+      margin-top: 74px;
+    }
+}
+
+.subtitle-maincontent {
+    .text-style(700, 24px, 117%, var(--text-color-1));
+}
+
+.j-c_left {
+    @media @desktop-lg-min {
+        display: flex;
+        justify-content: left;
+    }
+}
+
+.j-c_center {
+    @media @desktop-lg-min {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.j-c_right {
+    @media @desktop-lg-min {
+        display: flex;
+        justify-content: right;
+    }
+}
