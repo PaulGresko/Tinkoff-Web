@@ -128,8 +128,8 @@ function AddNewCardWithWaiting() {
 
 async function CreateStartCards() {
   openLoadIcon();
-  const cards = await fetch('http://localhost:3000/cards');
-  if(cards){
+  const cards = await fetch('http://localhost:3000/cards').then(response=>{return response.json()});
+  if(cards.length === 0){
     await Promise.all(startCards.map(async (newCard) => {
       await fetch('http://localhost:3000/cards', {
         method: 'POST',
@@ -138,10 +138,13 @@ async function CreateStartCards() {
         },
         body: JSON.stringify(newCard)
       });
-    }));
-    await showCards();
-    closeLoadIcon();
+    }));  
   }
+  else{
+    alert("Cards already exists")
+  }
+  await showCards();
+  closeLoadIcon();
 }
 
 function clearInputs() {
@@ -224,8 +227,7 @@ async function deleteCard(card) {
 }
 
 async function showCards() {
-  let cardContainer = document.getElementById('cardContainer');
-  cardContainer.innerHTML = '';
+  
 
   await fetch('http://localhost:3000/cards')
     .then(response => {
@@ -235,7 +237,10 @@ async function showCards() {
       return response.json();
     })
     .then(data => {
-      if (data) {
+      if (data.length !== 0) {
+        let cardContainer = document.getElementById('cardContainer');
+        cardContainer.innerHTML = '';
+        console.log(data);
         data.forEach(cardData => {
           let card = createCardElement(cardData);
           cardContainer.appendChild(card);
