@@ -1,11 +1,17 @@
-import React, {memo} from 'react';
+import React, {memo, useContext, useState} from 'react';
 import {MovieView} from '../../../types/movie';
 import styles from './MovieCard.module.scss';
 import cn from 'classnames';
+import { fetchMovies } from '../../App/App.service';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import StarIcon from '@mui/icons-material/Star';
+import { MovieContext } from '../../../context/MovieContext';
 
-export const MovieCard: React.FC<{card: MovieView; active: boolean}> = memo(({card, active}) => {
+export const MovieCard: React.FC<{card: MovieView; active: boolean; isFavorite: boolean}> = memo(({card, active, isFavorite}) => {
   const {title, year, genres} = card;
 
+  const {callRerender} = useContext(MovieContext);
+  
   return (
     <article className={cn(styles.card, {[styles.card_selected]: active})}>
       <h3 className={styles.card__title}>{title}</h3>
@@ -17,9 +23,33 @@ export const MovieCard: React.FC<{card: MovieView; active: boolean}> = memo(({ca
             <li key={item}>{item}</li>
           ))}
         </ul>
+        {isFavorite ? <StarIcon className="pointer" onClick={()=>{deleteFromFavorites(callRerender, card.id)}} /> 
+        : <StarBorderIcon className="pointer" onClick={()=>{addToFavorites(callRerender, card)}} />}
       </div>
+      
     </article>
   );
 });
 
+async function addToFavorites(callRerender, card) {
+  await fetchMovies('http://localhost:4000/favorites', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(card)
+  }).finally(()=>{
+    callRerender();
+  })
+}
+
+
+async function deleteFromFavorites(callRerender, id) {
+
+  await fetchMovies(`http://localhost:4000/favorites/${id}`, {
+    method: 'DELETE'
+  }).finally(()=>{
+    callRerender();
+  })
+}
 export default MovieCard;

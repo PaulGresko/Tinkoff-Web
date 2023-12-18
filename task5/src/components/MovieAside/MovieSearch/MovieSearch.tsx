@@ -2,6 +2,8 @@ import { useContext, useEffect, useState, useRef } from 'react';
 import { MovieContext } from '../../../context/MovieContext';
 import useDebounce from '../../../hooks/useDebounce';
 import { fetchMovies } from '../../App/App.service';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import StarIcon from '@mui/icons-material/Star';
 
 import Button from '../../Button/Button';
 import { Modal } from '../../Modal/Modal';
@@ -12,7 +14,8 @@ export const MovieSearch = () => {
   const { debounceValue } = useDebounce(value, 500);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { setMovies, filters, setFilters } = useContext(MovieContext);
+  const { changeList, isFavorite, setMovies, filters, setFilters } = useContext(MovieContext);
+
 
   const [filterList, setFilterList] = useState([]);
 
@@ -56,6 +59,9 @@ export const MovieSearch = () => {
         name="search"
         placeholder="Введите название фильма"
       />
+
+      {isFavorite ? <StarIcon className="pointer" onClick={()=>changeList()}/>
+        : <StarBorderIcon className="pointer" onClick={()=>changeList()}/>}
 
       <div ref={anchorFiltrationButton}>
         <Button secondary type="button" onClick={() => setIsModalOpen(true)}>

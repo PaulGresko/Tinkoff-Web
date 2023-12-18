@@ -12,9 +12,9 @@ interface IMoveList {
 export const MovieAside: React.FC = () => {
   return (
     <section className={styles.movieList}>
-      <MovieList />
+      <MovieList/>
 
-      <ListPanel />
+      <ListPanel/>
     </section>
   );
 };

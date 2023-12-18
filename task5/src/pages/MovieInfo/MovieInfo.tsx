@@ -53,6 +53,7 @@ const MovieInfo: React.FC = () => {
         <div className={styles.containerInfo}>
           <div>
             <h2 className={styles.title}>{currentMovie.title}</h2>
+            
             <span className={styles.director}>{currentMovie.director}</span>
           </div>
 
@@ -83,7 +84,6 @@ const MovieInfo: React.FC = () => {
     </section>
   );
 };
-
 const MovieInfoRow = ({title, value}) => {
   return (
     <div className={styles.rowContainer}>
