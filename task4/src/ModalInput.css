@@ -1,0 +1,84 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.add-panel {
+  z-index: 9;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  padding: 20px;
+  display: none;
+}
+
+.overlay.active,
+.add-panel.active {
+  display: block;
+}
+
+.input-field {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+
+
+input.input-title,
+input.input-supplier,
+input.input-code {
+  width: 220px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 10px 10px 0px 20px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+
+
+textarea.input-description {
+  font-family: 'Roboto', sans-serif;
+  width: 210px;
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+  height: 70px;
+  margin: 10px 10px 10px 20px;
+  resize: none;
+}
+
+.new_product-button {
+  margin-left: 25px;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.new_product-button:hover {
+  transform: scale(0.9);
+}
+
+.input-url {
+  width: 220px;
+  height: 160px;
+  margin-left: 20px;
+  border-radius: 15px;
+
+  background-color: rgba(255, 255, 255, 0.3);
+  font-size: 30px;
+  font-weight: 900;
+  margin-top: 35px;
+  color: black;
+  padding: 10px;
+  resize: none;
+}
